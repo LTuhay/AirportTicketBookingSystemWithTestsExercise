@@ -1,0 +1,20 @@
+AA123,USA,UK,2024-05-10,New York,London,500,0,1500
+AA124,USA,UK,2024-06-10,New York,London,0,1000,1500
+UA456,France,Germany,2024-06-15,Paris,Berlin,400,800,1200
+DL789,Spain,Italy,2024-07-20,Madrid,Rome,450,900,1350
+BA987,Japan,China,2024-08-25,Tokyo,Beijing,550,1100,1650
+AA125,Canada,Australia,2024-09-30,Toronto,Sydney,600,1200,1800
+UA457,Brazil,Argentina,2024-10-05,Sao Paulo,Buenos Aires,650,1300,1950
+DL790,India,Russia,2024-11-10,Delhi,Moscow,0,1400,2100
+BA988,Germany,France,2024-12-15,Berlin,Paris,750,1500,2250
+AA126,UK,USA,2025-01-20,London,New York,800,1600,0
+UA458,Italy,Spain,2025-02-25,Rome,Madrid,850,1700,2550
+DL791,China,Japan,2025-03-30,Beijing,Tokyo,900,1800,2700
+BA989,Australia,Canada,2025-04-05,Sydney,Toronto,0,0,2850
+AA127,Argentina,Brazil,2025-05-10,Buenos Aires,Sao Paulo,1000,2000,3000
+UA459,Russia,India,2025-06-15,Moscow,Delhi,1050,2100,3150
+DL792,France,Germany,2025-07-20,Paris,Berlin,1100,2200,0
+BA990,Spain,Italy,2025-08-25,Madrid,Rome,1150,2300,3450
+AA128,China,Japan,2025-09-30,Shanghai,Tokyo,1200,2400,3600
+UA460,USA,UK,2025-10-05,Los Angeles,London,0,2500,3750
+DL793,Germany,France,2025-11-10,Frankfurt,Paris,0,0,3900
