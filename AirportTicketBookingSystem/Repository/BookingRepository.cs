@@ -13,7 +13,7 @@ namespace AirportTicketBookingSystem.Repository
         private IPassengerRepository _passengerRepository;
         private IFlightRepository _flightRepository;
 
-        public BookingRepository(IPassengerRepository passengerRepository, IFlightRepository flightRepository, string? filePath)
+        public BookingRepository(IPassengerRepository passengerRepository, IFlightRepository flightRepository, string? filePath = null)
         {
             _passengerRepository = passengerRepository ?? throw new ArgumentNullException(nameof(passengerRepository));
             _flightRepository = flightRepository ?? throw new ArgumentNullException(nameof(flightRepository));

@@ -9,15 +9,13 @@ namespace AirportTicketBookingSystem.Controller
     {
 
         private readonly IFlightRepository _flightRepository;
-        private readonly IPassengerRepository _passengerRepository;
         private readonly IBookingRepository _bookingRepository;
         private readonly IMapper _mapper;
 
 
-        private BookingController(IFlightRepository flightRepository, IPassengerRepository passengerRepository, IBookingRepository bookingRepository, IMapper mapper)
+        public BookingController(IFlightRepository flightRepository, IBookingRepository bookingRepository, IMapper mapper)
         {
             _flightRepository = flightRepository ?? throw new ArgumentNullException(nameof(flightRepository));
-            _passengerRepository = passengerRepository ?? throw new ArgumentNullException(nameof(passengerRepository));
             _bookingRepository = bookingRepository ?? throw new ArgumentNullException(nameof(bookingRepository));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }

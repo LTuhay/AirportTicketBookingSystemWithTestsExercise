@@ -12,7 +12,7 @@ namespace AirportTicketBookingSystem.Controllers
         private readonly IMapper _mapper;
 
 
-        private PassengerController(IPassengerRepository passengerRepository, IMapper mapper)
+        public PassengerController(IPassengerRepository passengerRepository, IMapper mapper)
         {
             _passengerRepository = passengerRepository ?? throw new ArgumentNullException(nameof(passengerRepository));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));

@@ -234,3 +234,4 @@ C:\Users\loren\source\repos\AirportTicketBookingSystemSolution\AirportTicketBook
 C:\Users\loren\source\repos\AirportTicketBookingSystemSolution\AirportTicketBookingSystem.test\obj\Debug\net8.0\AirportTicketBookingSystem.test.pdb
 C:\Users\loren\source\repos\AirportTicketBookingSystemSolution\AirportTicketBookingSystem.test\obj\Debug\net8.0\AirportTicketBookingSystem.test.genruntimeconfig.cache
 C:\Users\loren\source\repos\AirportTicketBookingSystemSolution\AirportTicketBookingSystem.test\obj\Debug\net8.0\ref\AirportTicketBookingSystem.test.dll
+C:\Users\loren\source\repos\AirportTicketBookingSystemSolution\AirportTicketBookingSystem.test\obj\Debug\net8.0\AirportTicketBookingSystem.test.sourcelink.json
