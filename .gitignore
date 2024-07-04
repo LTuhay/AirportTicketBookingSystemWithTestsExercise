@@ -1,0 +1,41 @@
+# Visual Studio
+.vscode/
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+
+# DotNet
+project.lock.json
+project.fragment.lock.json
+artifacts/
+**/bin/
+**/obj/
+
+# Include if you have a temp folder you want to ignore
+*~/
+*.swp
+
+# Ignore the build results of the project
+/AirportTicketBookingSystem/bin/
+/AirportTicketBookingSystem/obj/
+/AirportTicketBookingSystem.test/bin/
+/AirportTicketBookingSystem.test/obj/
+
+# Others
+*.log
+*.tlog
+*.ide
+*.ide_
+*.ids
+*.pidb
+*.ilk
+*.idb
+*.cache
+*.tmp
+*.temp
+*.dat
