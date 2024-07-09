@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\loren\\source\\repos\\Foothill\\AirportTicketBookingSystemSolution\\AirportTicketBookingSystemWithTestsExercise\\AirportTicketBookingSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DFFB4188-658F-4B7B-9155-116BE6602DCC}|..\\AirportTicketBookingSystem.test\\AirportTicketBookingSystem.test.csproj|c:\\users\\loren\\source\\repos\\foothill\\airportticketbookingsystemsolution\\airportticketbookingsystemwithtestsexercise\\airportticketbookingsystem.test\\bookingtest\\bookingrepositorytest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BookingRepositoryTest.cs",
+              "DocumentMoniker": "C:\\Users\\loren\\source\\repos\\Foothill\\AirportTicketBookingSystemSolution\\AirportTicketBookingSystemWithTestsExercise\\AirportTicketBookingSystem.test\\BookingTest\\BookingRepositoryTest.cs",
+              "RelativeDocumentMoniker": "..\\AirportTicketBookingSystem.test\\BookingTest\\BookingRepositoryTest.cs",
+              "ToolTip": "C:\\Users\\loren\\source\\repos\\Foothill\\AirportTicketBookingSystemSolution\\AirportTicketBookingSystemWithTestsExercise\\AirportTicketBookingSystem.test\\BookingTest\\BookingRepositoryTest.cs",
+              "RelativeToolTip": "..\\AirportTicketBookingSystem.test\\BookingTest\\BookingRepositoryTest.cs",
+              "ViewState": "AQIAAMsAAAAAAAAAAAAAANQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T13:52:18.039Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

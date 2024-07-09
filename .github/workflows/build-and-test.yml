@@ -1,0 +1,47 @@
+name: build-and-test
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '**/*.cs'
+      - '**/*.csproj'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - '**/*.cs'
+      - '**/*.csproj'
+
+env:
+  DOTNET_VERSION: '8.0.205'
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: Restore dependencies for main project
+      run: dotnet restore AirportTicketBookingSystem/AirportTicketBookingSystem.csproj
+
+    - name: Restore dependencies for test project
+      run: dotnet restore AirportTicketBookingSystem.test/AirportTicketBookingSystem.test.csproj
+
+    - name: Build main project
+      run: dotnet build AirportTicketBookingSystem/AirportTicketBookingSystem.csproj --configuration Release --no-restore
+
+    - name: Build test project
+      run: dotnet build AirportTicketBookingSystem.test/AirportTicketBookingSystem.test.csproj --configuration Release --no-restore
+
+    - name: Run tests
+      run: dotnet test AirportTicketBookingSystem.test/AirportTicketBookingSystem.test.csproj --no-restore --verbosity normal
