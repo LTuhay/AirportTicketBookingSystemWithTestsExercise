@@ -3,6 +3,7 @@ using AirportTicketBookingSystem.Model;
 using AirportTicketBookingSystem.test.BookingTest;
 using AirportTicketBookingSystem.test.DataFactory;
 using Moq;
+using FluentAssertions;
 
 
 namespace AirportTicketBookingSystem.Repository.Tests
@@ -50,13 +51,13 @@ namespace AirportTicketBookingSystem.Repository.Tests
 
 
             var allBookings = bookingRepository.GetAllBookings();
-            Assert.NotNull(allBookings);
-            Assert.Single(allBookings);
-            Assert.Contains(allBookings, b => b.BookingId == booking.BookingId &&
-                                               b.Passenger.Id == booking.Passenger.Id &&
-                                               b.Flight.FlightNumber == booking.Flight.FlightNumber &&
-                                               b.BookingClass == booking.BookingClass &&
-                                               b.Price == booking.Price);
+            allBookings.Should().NotBeNull();
+            allBookings.Should().ContainSingle();
+            allBookings.Should().Contain(b => b.BookingId == booking.BookingId &&
+                                              b.Passenger.Id == booking.Passenger.Id &&
+                                              b.Flight.FlightNumber == booking.Flight.FlightNumber &&
+                                              b.BookingClass == booking.BookingClass &&
+                                              b.Price == booking.Price);
         }
 
 
@@ -72,11 +73,12 @@ namespace AirportTicketBookingSystem.Repository.Tests
             bookingRepository.AddBooking(newBooking);
 
             var result = bookingRepository.GetBookingByID(newBooking.BookingId);
-            Assert.NotNull(result);
-            Assert.Equal(newBooking.Passenger.Id, result.Passenger.Id);
-            Assert.Equal(newBooking.Flight.FlightNumber, result.Flight.FlightNumber);
-            Assert.Equal(newBooking.BookingClass, result.BookingClass);
-            Assert.Equal(newBooking.Price, result.Price);
+            result.Should().NotBeNull();
+            result.Passenger.Id.Should().Be(newBooking.Passenger.Id);
+            result.Flight.FlightNumber.Should().Be(newBooking.Flight.FlightNumber);
+            result.BookingClass.Should().Be(newBooking.BookingClass);
+            result.Price.Should().Be(newBooking.Price);
+
         }
 
         [Fact]
@@ -90,7 +92,7 @@ namespace AirportTicketBookingSystem.Repository.Tests
             bookingRepository.DeleteBooking(newBooking.BookingId);
 
             var result = bookingRepository.GetBookingByID(newBooking.BookingId);
-            Assert.Null(result);
+            result.Should().BeNull();
         }
 
         [Fact]
@@ -108,10 +110,10 @@ namespace AirportTicketBookingSystem.Repository.Tests
 
             var result = bookingRepository.GetBookingsByPassenger(passenger1.Id);
 
-            Assert.NotNull(result);
-            Assert.Equal(2, result.Count);
-            Assert.Contains(result, b => b.BookingId == newBooking1.BookingId && b.Passenger.Id == passenger1.Id && b.Flight.FlightNumber == flight1.FlightNumber);
-            Assert.Contains(result, b => b.BookingId == newBooking2.BookingId && b.Passenger.Id == passenger1.Id && b.Flight.FlightNumber == flight2.FlightNumber);
+            result.Should().NotBeNull();
+            result.Should().Contain(b => b.BookingId == newBooking1.BookingId && b.Passenger.Id == passenger1.Id && b.Flight.FlightNumber == flight1.FlightNumber);
+            result.Should().Contain(b => b.BookingId == newBooking2.BookingId && b.Passenger.Id == passenger1.Id && b.Flight.FlightNumber == flight2.FlightNumber);
+            result.Count.Should().Be(2);
         }
 
         [Fact]
@@ -132,9 +134,10 @@ namespace AirportTicketBookingSystem.Repository.Tests
             bookingRepository.UpdateBooking(updatedBooking);
 
             var result = bookingRepository.GetBookingByID("id12");
-            Assert.NotNull(result);
-            Assert.Equal(updatedBooking.Passenger, result.Passenger);
-            Assert.Equal(updatedBooking.Price, result.Price);
+            result.Should().NotBeNull();
+            result.Passenger.Should().Be(updatedBooking.Passenger);
+            result.Price.Should().Be(updatedBooking.Price);
+
         }
 
         [Fact]
@@ -152,11 +155,10 @@ namespace AirportTicketBookingSystem.Repository.Tests
 
             var result = bookingRepository.GetBookingByID("id12");
 
-
-            Assert.NotNull(result);
-            Assert.Equal(booking.BookingId, result.BookingId);
-            Assert.Equal(booking.Passenger.Id, result.Passenger.Id);
-            Assert.Equal(booking.Flight.FlightNumber, result.Flight.FlightNumber);
+            result.Should().NotBeNull();
+            result.BookingId.Should().Be(booking.BookingId);
+            result.Passenger.Id.Should().Be(booking.Passenger.Id);
+            result.Flight.FlightNumber.Should().Be(booking.Flight.FlightNumber);
         }
 
         [Fact]
@@ -179,10 +181,10 @@ namespace AirportTicketBookingSystem.Repository.Tests
 
             var result = bookingRepository.GetBookingByParams(50, 150, "USA", "Canada", new DateTime(2022, 12, 12), "JFK", "YYZ", "Economy");
 
+            result.Should().NotBeNull();
+            result.Should().ContainSingle();
+            result.Should().Contain(b => b.BookingId == "B8");
 
-            Assert.NotNull(result);
-            Assert.Single(result);
-            Assert.Contains(result, b => b.BookingId == "B8");
         }
 
         [Fact]
@@ -204,10 +206,11 @@ namespace AirportTicketBookingSystem.Repository.Tests
 
             var result = bookingRepository.GetBookingByFlightNumber("AA123");
 
-            Assert.NotNull(result);
-            Assert.Equal(2, result.Count);
-            Assert.Contains(result, b => b.BookingId == "B8");
-            Assert.Contains(result, b => b.BookingId == "B9");
+            result.Should().NotBeNull();
+            result.Count.Should().Be(2);
+            result.Should().Contain(b => b.BookingId == "B8");
+            result.Should().Contain(b => b.BookingId == "B9");
+
         }
 
 
